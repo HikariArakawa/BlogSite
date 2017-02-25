@@ -1,0 +1,15 @@
+<h1>Sign in</h1>
+
+<%= form_tag ({action: "create"}) do %>
+
+<p>
+アカウントID:<%= text_field :acctount_id ,:name %>
+</p>
+
+<p>
+パスワード:<%= text_field :password ,:name %>
+</p>
+
+<%= submit_tag "ログイン"%>	
+
+<% end %>

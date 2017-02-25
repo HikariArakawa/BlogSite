@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<% @blogs.each do |blog| %>
+  <div id="post">
+    <table class="index_style">
+      <tr><td><h2><%= blog.title %></h2></td></tr>
+      <tr><td><%= simple_format(h(blog.main)) %></td></tr>
+      <tr><td class="right"><%= blog.user_id %> - <%= blog.created_at %></td></tr>
+      <tr><td class="right">
+        <%= link_to 'Show', blog %> | 
+        <%= link_to 'Edit', edit_blog_path(blog) %> | 
+        <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td></tr>
+    </table>
+  </div>
+<% end %>
+
+<%= paginate @blogs %>
+<br>
+
+<%= link_to 'New Blog', new_blog_path %>

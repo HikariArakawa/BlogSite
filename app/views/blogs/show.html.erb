@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<div id="post">
+	<p>
+	  <strong>Title:</strong>
+	  <%= @blog.title %>
+	</p>
+
+	<p>
+	  <strong>Main:</strong>
+	  <%= simple_format(h(@blog.main)) %>
+	</p>
+
+	<p>
+	  <strong>User:</strong>
+	  <%= @blog.user_id %>
+	</p>
+
+	<p>
+	  <strong>Write date:</strong>
+	  <%= @blog.write_date %>
+	</p>
+</div>
+<%= link_to 'Edit', edit_blog_path(@blog) %> |
+<%= link_to 'Back', blogs_path %>
