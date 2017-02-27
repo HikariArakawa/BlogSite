@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
+  resources :users
   get 'session/new'
   post 'session/create'
 
   resources :accounts
-  resources :users
   resources :blogs
   resources :tests
 

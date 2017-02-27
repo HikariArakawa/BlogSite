@@ -11,6 +11,36 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nickname %>
+    <%= f.text_field :nickname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :self_introduction %>
+    <%= f.text_area :self_introduction %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sex %>
+    <%= f.number_field :sex %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

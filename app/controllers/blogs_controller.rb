@@ -4,7 +4,8 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.page(params[:page]).per(5).order("id desc")
+    session_check
+    @blogs = Blog.page(params[:page]).where(user_id: session[:user_id]).per(5).order("id desc")
     #all.order("id desc")
   end
 
@@ -26,6 +27,7 @@ class BlogsController < ApplicationController
   # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
+    @blog.user_id = session[:user_id]
 
     respond_to do |format|
       if @blog.save
